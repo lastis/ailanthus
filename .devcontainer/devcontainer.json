@@ -2,36 +2,47 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"build": {
-        "dockerfile": "Dockerfile"
-    },
-
+		"dockerfile": "Dockerfile"
+	},
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "task install",
-
 	// Install extensions for the container.
 	"customizations": {
 		"vscode": {
-		  "extensions": [
-			  "github.vscode-pull-request-github",
-			  "github.vscode-github-actions",
-			  "github.copilot",
-			  "ms-python.debugpy",
-			  "ms-python.python",
-			  "ms-python.vscode-pylance",
-			  "ms-toolsai.jupyter",
-			  "ms-toolsai.jupyter-keymap",
-			  "ms-toolsai.jupyter-renderers",
-			  "ms-toolsai.vscode-jupyter-cell-tags",
-			  "ms-toolsai.vscode-jupyter-slideshow",
-			  "charliermarsh.ruff",
-			  "davidanson.vscode-markdownlint",
-			  "mechatroner.rainbow-csv",
-			  "mutantdino.resourcemonitor",
-			  "pkief.material-icon-theme",
-			  "redhat.vscode-yaml",
-			  "mikestead.dotenv",
-			  "tamasfe.even-better-toml",
-			  "iterative.dvc"
+			"extensions": [
+				// Pull request and GitHub Actions features.
+				"github.vscode-pull-request-github",
+				"github.vscode-github-actions",
+				// VSCode GitHub Copilot.
+				"github.copilot",
+				// Essential Python features.
+				"ms-python.debugpy",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				// VSCode Jupyter notebook support.
+				"ms-toolsai.jupyter",
+				"ms-toolsai.jupyter-keymap",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.vscode-jupyter-slideshow",
+				// Python linting.
+				"charliermarsh.ruff",
+				// Markdown highliting and features.
+				"davidanson.vscode-markdownlint",
+				// Easier to see CSV files.
+				"mechatroner.rainbow-csv",
+				// Resource monitoring in status bar.
+				"mutantdino.resourcemonitor",
+				// Easier to see symbols in the explorer.
+				"pkief.material-icon-theme",
+				// YAML highlighting.
+				"redhat.vscode-yaml",
+				// TOML highlighting.
+				"tamasfe.even-better-toml",
+				// DVC extension.
+				"iterative.dvc",
+				// Shortcut for wrapping long lines.
+				"dnut.rewrap-revived"
 			]
 		}
 	}
