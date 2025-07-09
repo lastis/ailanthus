@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"build": {
+        "dockerfile": "Dockerfile"
+    },
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "task install",
+
+	// Install extensions for the container.
+	"customizations": {
+		"vscode": {
+		  "extensions": [
+			  "github.vscode-pull-request-github",
+			  "github.vscode-github-actions",
+			  "github.copilot",
+			  "ms-python.debugpy",
+			  "ms-python.python",
+			  "ms-python.vscode-pylance",
+			  "ms-toolsai.jupyter",
+			  "ms-toolsai.jupyter-keymap",
+			  "ms-toolsai.jupyter-renderers",
+			  "ms-toolsai.vscode-jupyter-cell-tags",
+			  "ms-toolsai.vscode-jupyter-slideshow",
+			  "charliermarsh.ruff",
+			  "davidanson.vscode-markdownlint",
+			  "mechatroner.rainbow-csv",
+			  "mutantdino.resourcemonitor",
+			  "pkief.material-icon-theme",
+			  "redhat.vscode-yaml",
+			  "mikestead.dotenv",
+			  "tamasfe.even-better-toml",
+			  "iterative.dvc"
+			]
+		}
+	}
+}
