@@ -12,17 +12,19 @@ A Python-based tree growth simulation using the Arcade game library and Esper EC
 ## Quick Start
 
 1. **Run the simulation**:
+
    ```bash
    task run
-   # or just: task (runs the default task)
    ```
 
 2. **Test graphics support**:
+
    ```bash
    task test-graphics
    ```
 
 3. **Install dependencies** (if needed):
+
    ```bash
    task install
    ```
@@ -45,18 +47,22 @@ This project is configured to work with OpenGL graphics in a dev container envir
 ## How It Works
 
 ### ECS Components
+
 - **EnergyComponent**: Stores the tree's energy value
 
 ### ECS Systems
+
 - **EnergyProcessingSystem**: Increases tree energy over time
 
 ### Visual Elements
+
 - **Tree Trunk**: Grows taller as energy increases
 - **Tree Canopy**: Expands with multiple overlapping circles
 - **Detailed Leaves**: Added when energy exceeds threshold
 - **Energy Display**: Shows current energy level in real-time
 
 ### Game Flow
+
 1. Tree starts with 0 energy
 2. Energy increases by 1 every second
 3. Visual representation grows accordingly:
@@ -67,15 +73,19 @@ This project is configured to work with OpenGL graphics in a dev container envir
 ## Development
 
 The project uses modern Python tooling:
+
 - **Python 3.13+** 
 - **uv** for package management
 - **Taskfile** for command runner
 - **Dev Container** with pre-configured environment
 
-### Dependencies
-- `arcade>=3.3.2` - 2D game development
-- `esper>=3.4` - Entity Component System
-- `PyOpenGL>=3.1.7` - OpenGL bindings
+### Tools
+
+These are some important tools and libraries used in the project:
+
+- `arcade` - 2D game development
+- `esper` - Entity Component System
+- `PyOpenGL` - OpenGL bindings
 
 ## Architecture Notes
 
