@@ -12,12 +12,12 @@ tasks:
     desc: "Run the tree simulation with graphics window"
     cmds:
       - echo "DISPLAY is set to:$$DISPLAY"
-      - uv run main.py
+      - uv run scripts/main.py
 
   run-headless:
     desc: "Run the tree simulation without graphics (console mode)"
     cmds:
-      - uv run main.py --no-graphics
+      - uv run scripts/main.py --no-graphics
 
   test-graphics:
     desc: "Test graphics window with XQuartz"
@@ -25,7 +25,7 @@ tasks:
       - echo "Testing X11 connection to XQuartz..."
       - echo "DISPLAY is set to:$$DISPLAY"
       - python3 -c "import os; print('DISPLAY env var:', os.environ.get('DISPLAY', 'Not set'))"
-      - uv run python test_graphics.py
+      - uv run python scripts/test_graphics.py
 
   setup-xquartz:
     desc: "Run XQuartz setup script (run on macOS host)"
