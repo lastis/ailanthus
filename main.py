@@ -2,15 +2,8 @@ import argparse
 import time
 from dataclasses import dataclass
 
+import arcade
 import esper
-
-try:
-    import arcade
-
-    ARCADE_AVAILABLE = True
-except ImportError:
-    ARCADE_AVAILABLE = False
-    print("Arcade not available - falling back to console mode")
 
 
 # Component that represents a tree's energy state
@@ -122,7 +115,7 @@ def main():
     parser.add_argument("--no-graphics", action="store_true", help="Run without graphics (console mode only)")
     args = parser.parse_args()
 
-    if args.no_graphics or not ARCADE_AVAILABLE:
+    if args.no_graphics:
         print("Running in console mode...")
         # TODO: Add console-only simulation later
         print("Console mode not implemented yet. Use graphics mode.")
