@@ -9,9 +9,10 @@ tasks:
       - uv sync
 
   run:
-    desc: "Run the tree simulation with graphics (default)"
+    desc: "Run the tree simulation with graphics window"
     cmds:
-      - ./start_display.sh uv run main.py
+      - echo "DISPLAY is set to:$$DISPLAY"
+      - uv run main.py
 
   run-headless:
     desc: "Run the tree simulation without graphics (console mode)"
@@ -19,8 +20,16 @@ tasks:
       - uv run main.py --no-graphics
 
   test-graphics:
-    desc: "Test if graphics support is working"
+    desc: "Test graphics window with XQuartz"
     cmds:
-      - ./start_display.sh uv run python test_graphics.py
+      - echo "Testing X11 connection to XQuartz..."
+      - echo "DISPLAY is set to:$$DISPLAY"
+      - python3 -c "import os; print('DISPLAY env var:', os.environ.get('DISPLAY', 'Not set'))"
+      - uv run python test_graphics.py
+
+  setup-xquartz:
+    desc: "Run XQuartz setup script (run on macOS host)"
+    cmds:
+      - ./scripts/setup_xquartz.sh
 
   default: run

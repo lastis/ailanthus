@@ -40,16 +40,44 @@ A Python-based tree growth simulation using the Arcade game library and Esper EC
 
 - `task run` - Run the simulation with graphics (default)
 - `task run-headless` - Run without graphics (console mode)
-- `task test-graphics` - Test OpenGL and graphics support
+- `task test-graphics` - Test graphics window support
+- `task setup-xquartz` - Run XQuartz setup script (macOS host only)
 - `task install` - Install all dependencies
 
-## Graphics in Dev Container
+## Graphics Setup
 
-This project is configured to work with OpenGL graphics in a dev container environment:
+This project displays real graphics windows using XQuartz on macOS:
 
-- **Virtual Display**: Uses Xvfb for headless OpenGL rendering
-- **Libraries**: All necessary OpenGL, X11, and font libraries are installed
-- **Auto-setup**: The `start_display.sh` script automatically starts the virtual display
+### Initial Setup (macOS)
+
+1. **Install XQuartz** (if not already installed):
+
+   ```bash
+   brew install --cask xquartz
+   ```
+
+2. **Run the setup script** (on macOS host, not in container):
+
+   ```bash
+   task setup-xquartz
+   ```
+
+3. **Rebuild the dev container** in VS Code:
+   - `Cmd+Shift+P` → "Dev Containers: Rebuild Container"
+
+### Manual XQuartz Configuration
+
+If automatic setup doesn't work:
+
+1. **Start XQuartz** and open Preferences
+2. **Security tab**: Check "Allow connections from network clients"
+3. **Terminal**: Run `xhost +localhost`
+
+### Graphics Libraries
+
+- **OpenGL Support**: Full hardware-accelerated rendering
+- **X11 Integration**: Direct window display on macOS desktop
+- **Testing Tools**: Built-in graphics validation
 
 ## How It Works
 

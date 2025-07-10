@@ -20,8 +20,9 @@ RUN apt-get update && apt-get install -y \
     libxcomposite1 \
     libxdamage1 \
     libxfixes3 \
-    # Virtual framebuffer for headless mode
-    xvfb \
+    # X11 client applications for testing
+    x11-apps \
+    xauth \
     # Audio support (optional for games)
     libasound2-dev \
     pulseaudio \
@@ -36,5 +37,5 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
     mv /root/.local/bin/uv /usr/local/bin/uv
 
 # Set up environment variables for OpenGL
-ENV DISPLAY=:99
+ENV DISPLAY=host.docker.internal:0
 ENV LIBGL_ALWAYS_INDIRECT=1

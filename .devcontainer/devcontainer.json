@@ -6,14 +6,15 @@
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "task install",
-	// Runtime arguments for graphics support
+	// Runtime arguments for graphics support with XQuartz
 	"runArgs": [
-		"--privileged",
-		"--device=/dev/dri:/dev/dri"
+		"--net=host",
+		"-e", "DISPLAY=host.docker.internal:0",
+		"-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw"
 	],
 	// Environment variables for graphics
 	"containerEnv": {
-		"DISPLAY": ":99",
+		"DISPLAY": "host.docker.internal:0",
 		"LIBGL_ALWAYS_INDIRECT": "1"
 	},
 	// Install extensions for the container.
