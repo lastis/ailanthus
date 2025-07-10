@@ -6,6 +6,16 @@
 	},
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "task install",
+	// Runtime arguments for graphics support
+	"runArgs": [
+		"--privileged",
+		"--device=/dev/dri:/dev/dri"
+	],
+	// Environment variables for graphics
+	"containerEnv": {
+		"DISPLAY": ":99",
+		"LIBGL_ALWAYS_INDIRECT": "1"
+	},
 	// Install extensions for the container.
 	"customizations": {
 		"vscode": {

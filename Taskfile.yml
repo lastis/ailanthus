@@ -4,5 +4,23 @@ version: '3'
 
 tasks:
   install:
+    desc: "Install all dependencies"
     cmds:
       - uv sync
+
+  run:
+    desc: "Run the tree simulation with graphics (default)"
+    cmds:
+      - ./start_display.sh uv run main.py
+
+  run-headless:
+    desc: "Run the tree simulation without graphics (console mode)"
+    cmds:
+      - uv run main.py --no-graphics
+
+  test-graphics:
+    desc: "Test if graphics support is working"
+    cmds:
+      - ./start_display.sh uv run python test_graphics.py
+
+  default: run
