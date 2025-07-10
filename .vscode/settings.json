@@ -2,5 +2,10 @@
     // Fix so that Copilot instructions are recognized as markdown files.
     "files.associations": {
         "*.copilot-instructions.md": "markdown"
-    }
+    },
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": "README.md"
+        }
+    ]
 }

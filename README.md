@@ -9,6 +9,13 @@ A Python-based tree growth simulation using the Arcade game library and Esper EC
 - **Graphics Support**: Full OpenGL support in dev containers
 - **Headless Mode**: Option to run without graphics (for future console implementation)
 
+## Development Environment
+
+- **Python 3.13.3** with uv package management
+- **Taskfile** for command runner
+- **Dev Container** with Debian-based environment
+- **Key Dependencies**: arcade, esper, numpy
+
 ## Quick Start
 
 1. **Run the simulation**:
@@ -72,25 +79,24 @@ This project is configured to work with OpenGL graphics in a dev container envir
 
 ## Development
 
-The project uses modern Python tooling:
+The project uses modern Python tooling and follows ECS patterns:
 
-- **Python 3.13+** 
+- **Python 3.13+**
 - **uv** for package management
 - **Taskfile** for command runner
 - **Dev Container** with pre-configured environment
 
-### Tools
-
-These are some important tools and libraries used in the project:
+### Key Libraries
 
 - `arcade` - 2D game development
 - `esper` - Entity Component System
 - `PyOpenGL` - OpenGL bindings
+- `numpy` - Numerical computing
 
-## Architecture Notes
+### Development Guidelines
 
-- Follows ECS patterns for clean separation of concerns
-- Uses minimal code with efficient list comprehensions
-- Organized in logical paragraphs with explanatory comments
-- Leverages NumPy for potential vectorized operations
-- Modern Python features and type hints throughout
+- Use ECS patterns with clear entity/component/system separation
+- Write minimal code with list comprehensions when appropriate
+- Follow PEP 8 with type hints and descriptive names
+- Write code in paragraphs with the first comment explaining the purpose of each section (newline signifies a new paragraph)
+- Prefer vectorized NumPy operations over loops
